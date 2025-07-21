@@ -9,5 +9,34 @@ package Clases;
  * @author 22775980-1
  */
 public class Validar {
+    public static int intParse(String dato){
+        try {
+        return Integer.parseInt(dato);
+    }catch (NumberFormatException e){
+        return -1;
+    }
+        
+    }
     
+    public static float floatParse(String dato){
+        try {
+        return Float.parseFloat(dato);
+    }catch (NumberFormatException e){
+        return -1;
+    }
+    }
+    
+    public static boolean validarString(String dato){
+        boolean flag = false;
+        try{if (dato.isEmpty() || dato.isBlank()){
+        flag = true;
+           }
+    } catch (Exception e){
+    flag = true;
+    }
+    return flag;
+        
+        
+    }
+            
 }

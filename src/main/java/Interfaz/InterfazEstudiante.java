@@ -3,6 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package Interfaz;
+import Clases.Validar;
+import Clases.Estudiante;
 
 /**
  *
@@ -230,6 +232,7 @@ public class InterfazEstudiante extends javax.swing.JFrame {
         String peso = TXTPeso.getText();
         String estudianteid = TXTEstudianteID.getText();
         String estatura = TXTEstudianteID.getText();
+        
         
                 
                 
