@@ -9,5 +9,7 @@ package cl.lec;
  * @author 22775980-1
  */
 public class PrimerProjectoLEC {
-    
+    public static void main(String[] args) {
+        System.out.println("Hello World!");
+    }
 }
