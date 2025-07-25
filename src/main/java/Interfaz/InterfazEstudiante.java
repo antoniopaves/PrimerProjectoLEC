@@ -5,6 +5,7 @@
 package Interfaz;
 import Clases.Validar;
 import Clases.Estudiante;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -230,12 +231,55 @@ public class InterfazEstudiante extends javax.swing.JFrame {
         String Birthday = TXTBirthday.getText();
         String edad = TXTEdad.getText();
         String peso = TXTPeso.getText();
-        String estudianteid = TXTEstudianteID.getText();
-        String estatura = TXTEstudianteID.getText();
+        String estudianteID = TXTEstudianteID.getText();
+        String estatura = TXTEstatura.getText();
         
+         if(Validar.intParse(estudianteID) == -1){
+         JOptionPane.showMessageDialog(rootPane,"Se requiere el ID de estudiante");
+         TXTEstudianteID.requestFocus();}       
+         else if(Validar.validarString(Nombre) == true){
+         JOptionPane.showMessageDialog(rootPane,"El Nombre es requerido");
+         TXTNombre.requestFocus();
+         }else if(Validar.validarString(Apellido1) == true){
+         JOptionPane.showMessageDialog(rootPane,"Se requiere el Apellido 1");
+         TXTApellido1.requestFocus();  
+         } else if(Validar.validarString(Apellido2) == true){
+         JOptionPane.showMessageDialog(rootPane,"Se requiere el Apellido 2");
+         TXTApellido2.requestFocus();  
+         }else if(Validar.validarString(Curso) == true){
+         JOptionPane.showMessageDialog(rootPane,"Se requiere el Curso");
+         TXTCurso.requestFocus();  
+         }else if(Validar.validarString(Correo) == true){
+         JOptionPane.showMessageDialog(rootPane,"Se requiere el Correo");
+         TXTCorreo.requestFocus();  
+         }else if(Validar.validarString(Run) == true){
+         JOptionPane.showMessageDialog(rootPane,"Se requiere el Run");
+         TXTRun.requestFocus();  
+         }else if(Validar.validarString(Birthday) == true){
+         JOptionPane.showMessageDialog(rootPane,"Se requiere la fecha de nacimiento");
+         TXTBirthday.requestFocus();  
+         }else if(Validar.intParse(edad) == -1 || Integer.parseInt(edad) > 23 || Integer.parseInt(edad) < 14){
+         JOptionPane.showMessageDialog(rootPane,"Se requiere la Edad");
+         TXTEdad.requestFocus();  
+         }else if(Validar.floatParse(peso) == -1 || Float.parseFloat(peso) <= 0){
+         JOptionPane.showMessageDialog(rootPane,"Se requiere el Peso");
+         TXTPeso.requestFocus();  
+         }
+         else if(Validar.floatParse(estatura) == -1 || Float.parseFloat(estatura) <= 0){
+         JOptionPane.showMessageDialog(rootPane,"Se requiere la Estatura");
+         TXTEstatura.requestFocus();  
+         }else{
+        int EstudianteID = Integer.parseInt(estudianteID);
+        int Edad = Integer.parseInt(edad);
+        float Peso = Float.parseFloat(peso);
+        float Estatura = Float.parseFloat(estatura);
         
-                
-                
+        Estudiante estudiante1 = new Estudiante(EstudianteID,Nombre,Apellido1,Apellido2,Curso,Correo,Run,Birthday,Edad,Peso,Estatura);
+        JOptionPane.showMessageDialog(rootPane,estudiante1.toString());}
+         
+        
+         
+         
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
